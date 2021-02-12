@@ -8,7 +8,6 @@ public class Square {
     int squareType;  //0 = start, 1= finishSquare, 2=road, 3=structure
     int xCord;
     int yCord;
-    static int numberOfStructures=0;
 
 
     public Square(int x, int y){

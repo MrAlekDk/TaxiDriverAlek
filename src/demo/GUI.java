@@ -21,11 +21,13 @@ public class GUI {
         this.board = board;
         frame = new MyFrame(1000);
         drawMap(board);
+        frame.showBoard();
     }
 
-    public void frameUpdate(){
+    public void frameUpdate(int[] vector){
+        player.setLocation(player.getX()+vector[0],player.getY()+vector[1]);
+        frame.addSquare(player);
 
-        frame.showBoard();
 
     }
 
@@ -47,11 +49,11 @@ public class GUI {
 
                     //---------Player tile---------------//
                     player = new JLabel();
+                    player.setSize(size,size);
                     player.setBackground(Color.yellow);
-                    player.setLocation(board[i][j].xCord * size, board[i][j].yCord * size);
+                    player.setLocation(board[i][j].xCord * size+100, board[i][j].yCord * size);
                     player.setOpaque(true);
                     player.setVisible(true);
-                    frame.addSquare(player);
 
 
                 } else if (board[i][j].squareType == 1) {

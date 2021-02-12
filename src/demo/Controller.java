@@ -12,10 +12,14 @@ public class Controller {
         userInterface = new GUI(gameBoard.getSquares());
     }
 
-    public void run(){
+    public void run() throws InterruptedException {
 
+        //userInterface.showBoard();
         while(true){
-            userInterface.frameUpdate();
+            userInterface.frameUpdate(playerControl.getDirection());
+            Thread.sleep(100);
+
+
         }
 
 
